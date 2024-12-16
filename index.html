@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient History</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-left">Clinic Logo</div>
+        <div class="header-right">
+            <span>User: Admin</span>
+            <span>Role: Administrator</span>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <div class="controls">
+            <h2>Patient History</h2>
+            <div class="filters">
+                <select id="searchFilter">
+                    <option value="">Select Filter</option>
+                    <option value="status">Status</option>
+                    <option value="breed">Breed</option>
+                </select>
+
+                <button id="addPatientBtn">Add Patient</button>
+
+                <select id="statusFilter">
+                    <option value="">Status</option>
+                    <option value="High">High</option>
+                    <option value="Low">Low</option>
+                </select>
+
+                <select id="breedFilter">
+                    <option value="">Breed</option>
+                    <option value="Breed A">Breed A</option>
+                    <option value="Breed B">Breed B</option>
+                </select>
+
+                <div class="pagination">
+                    <span>Page 1 of 10</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Patient Table -->
+        <div class="patient-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pet Name</th>
+                        <th>Status</th>
+                        <th>Parent Name</th>
+                        <th>Breed</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Contact Ph Number</th>
+                        <th>Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Dynamic rows will be added here -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Add/Edit Patient Modal -->
+        <div id="patientModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3>Add/Edit Patient</h3>
+                <form id="patientForm">
+                    <label for="patientName">Patient Name:</label>
+                    <input type="text" id="patientName" required>
+
+                    <label for="parentName">Parent Name:</label>
+                    <input type="text" id="parentName" required>
+
+                    <label>Gender:</label>
+                    <label><input type="radio" name="gender" value="Male"> Male</label>
+                    <label><input type="radio" name="gender" value="Female"> Female</label>
+
+                    <label for="dob">Date of Birth:</label>
+                    <input type="date" id="dob" required>
+
+                    <label for="contact">Contact:</label>
+                    <input type="text" id="contact" required>
+
+                    <label for="address">Address:</label>
+                    <input type="text" id="address" required>
+
+                    <label for="status">Status:</label>
+                    <select id="status">
+                        <option value="">Select Status</option>
+                        <option value="High">High</option>
+                        <option value="Low">Low</option>
+                    </select>
+
+                    <label for="breed">Breed:</label>
+                    <select id="breed">
+                        <option value="">Select Breed</option>
+                        <option value="Breed A">Breed A</option>
+                        <option value="Breed B">Breed B</option>
+                    </select>
+
+                    <label for="city">City:</label>
+                    <input type="text" id="city" required>
+
+                    <label for="township">Township:</label>
+                    <input type="text" id="township" required>
+
+                    <button type="submit">Save</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
